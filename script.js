@@ -25,38 +25,25 @@ updateThemeLabel();
 
 document.querySelectorAll(".year").forEach((year) => { year.textContent = new Date().getFullYear(); });
 
-document.querySelectorAll(".project-more").forEach((button) => {
-  button.addEventListener("click", () => {
-    const card = button.closest(".project-card");
-    const open = card.classList.toggle("is-open");
-    button.setAttribute("aria-expanded", String(open));
-    button.textContent = open ? "Show less ↑" : "View project ↗";
-  });
-});
-
-function openLinkedProject() {
-  if (!location.hash) return;
-  const card = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-  if (!card?.classList.contains("project-card")) return;
-  card.classList.add("is-open");
-  const button = card.querySelector(".project-more");
-  button.setAttribute("aria-expanded", "true");
-  button.textContent = "Show less ↑";
+function followProjectBookmark() {
+  const project = document.querySelector(".project-card:target .project-more");
+  if (project) location.replace(project.href);
 }
-openLinkedProject();
-window.addEventListener("hashchange", openLinkedProject);
+followProjectBookmark();
+window.addEventListener("hashchange", followProjectBookmark);
 
 const pages = [
   { title: "about", description: "Biography and research interests", path: "/index.html" },
   { title: "projects", description: "Selected robotics projects", path: "/projects/index.html" },
   { title: "competition", description: "VEX U World Championship and robot control", path: "/competition/index.html" },
   { title: "CV", description: "Curriculum vitae PDF", path: "/cv/index.html" },
-  { title: "Safe reinforcement learning", description: "Autonomous racing and safety filtering", path: "/projects/index.html#safe-rl" },
-  { title: "Humanoid motion imitation", description: "Unitree G1 motion learning", path: "/projects/index.html#humanoid" },
-  { title: "Robotic grasping", description: "Language-guided grasp planning", path: "/projects/index.html#grasping" },
-  { title: "Autonomous sweeping robot", description: "STM32 and RDK X5 mobile robotics", path: "/projects/index.html#sweeper" },
-  { title: "Self-balancing robot", description: "FOC and cascaded control", path: "/projects/index.html#balancing" },
-  { title: "Mobile manipulation", description: "Robot-arm kinematics and mobile control", path: "/projects/index.html#mobile-manipulation" },
+  { title: "Safe reinforcement learning", description: "Autonomous racing and safety filtering", path: "/projects/safe-rl.html" },
+  { title: "SafePi · Collision-aware pick and place", description: "Frozen π0.5, RGB-D grasp planning, and safety filtering in simulation", path: "/projects/safepi.html" },
+  { title: "Humanoid motion imitation", description: "Unitree G1 motion learning", path: "/projects/humanoid.html" },
+  { title: "Robotic grasping", description: "Language-guided grasp planning", path: "/projects/grasping.html" },
+  { title: "Autonomous sweeping robot", description: "STM32 and RDK X5 mobile robotics", path: "/projects/sweeper.html" },
+  { title: "Self-balancing robot", description: "FOC and cascaded control", path: "/projects/balancing.html" },
+  { title: "Mobile manipulation", description: "Robot-arm kinematics and mobile control", path: "/projects/mobile-manipulation.html" },
   { title: "VEX U robotics", description: "Competition robot, autonomous routes, and color sorting", path: "/competition/index.html" },
 ];
 

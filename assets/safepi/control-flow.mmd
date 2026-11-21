@@ -1,0 +1,32 @@
+---
+config:
+  theme: base
+  htmlLabels: false
+  themeVariables:
+    fontFamily: "Arial, sans-serif"
+    fontSize: "16px"
+    primaryColor: "#ffffff"
+    primaryTextColor: "#24222a"
+    primaryBorderColor: "#a7a1b0"
+    lineColor: "#665d74"
+    edgeLabelBackground: "#f7f7fa"
+  flowchart:
+    curve: linear
+    nodeSpacing: 20
+    rankSpacing: 20
+---
+flowchart TB
+  accTitle: SafePi control flow
+  accDescr: RGB-D enables a raised approach when a clear route exists. The safety QP filters the chosen motion, and the frozen policy supplies the gripper command.
+
+  vision["Two RGB-D views"] --> plan["If clearance is tight and a route exists<br/>Raise, detour, descend"]
+  plan -->|Approach motion| qp["Safety QP<br/>Links, gripper, and payload"]
+  policy["Frozen π0.5"] -->|Default and after approach| qp
+  vision -.->|Observed geometry| qp
+  qp -->|Filtered motion| panda["Panda in MuJoCo"]
+  policy -.->|Gripper command| panda
+
+  classDef planStyle fill:#f5edf9,stroke:#9c77aa
+  classDef filterStyle fill:#efe5f4,stroke:#865a96,stroke-width:2px
+  class plan planStyle
+  class qp filterStyle

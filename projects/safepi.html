@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RGB-D grasp planning and safety filtering for a frozen vision-language-action policy in MuJoCo.">
+  <meta name="theme-color" content="#ffffff">
+  <title>SafePi · Collision-Aware Pick and Place with π0.5 | Yanbin Wang</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Arial' font-size='38' font-weight='700' fill='%23b509ac'%3EYW%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../script.js"></script>
+</head>
+<body data-root="..">
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="../index.html" aria-label="Yanbin Wang home"><strong>Yanbin</strong> Wang</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">about</a><a class="active" aria-current="location" href="index.html">projects</a><a href="../competition/index.html">competition</a><a href="../cv/index.html">CV</a>
+      <button class="nav-tool search-trigger" type="button" aria-label="Search site" title="Search (Ctrl+K)"><span class="shortcut">ctrl k</span><span class="search-glyph" aria-hidden="true"></span></button>
+      <button class="nav-tool theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">◐</button>
+    </nav>
+  </div></header>
+  <main class="container subpage project-page">
+    <a class="project-back" href="index.html">← All projects</a>
+    <h1>SafePi · Collision-Aware Pick and Place with π0.5</h1>
+    <p class="page-subtitle project-summary">RGB-D grasp planning and safety filtering for a frozen vision-language-action policy in MuJoCo.</p>
+    <figure class="safepi-flow" aria-labelledby="safepi-flow-title">
+      <figcaption id="safepi-flow-title">SafePi control flow</figcaption>
+      <img src="../assets/safepi/control-flow.svg" alt="Two RGB-D views guide a raised approach when clearance is tight and a feasible route exists. Otherwise, and after the approach, π0.5 supplies the motion reference. A safety QP filters motion using link, gripper, and payload clearance. The π0.5 gripper command goes directly to the simulated Panda.">
+    </figure>
+    <p>Starting from AEGIS, I extended the safety filter to account for Panda arm links, the gripper, and a carried carton. When a bottle crowded the grasp, I used two RGB-D views to plan a raised approach. The policy took over after the approach, and RGB-D payload fitting kept the carton represented in the filter even during a narrow grasp.</p>
+    <div class="project-gallery project-gallery--video project-gallery--safepi">
+      <figure class="project-gallery-wide">
+        <video controls playsinline preload="none" poster="../assets/safepi/comparison-poster.webp" aria-label="Matched D/7 simulation showing the original SafePi controller and the controller with grasp planning and narrow-grasp detection">
+          <source src="../assets/safepi/d7-comparison.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        <figcaption>Matched tight-layout trial (D/7). The original SafePi controller stalled before grasping. With the planned approach and narrow-grasp detection, placement passed in 324 controls with zero obstacle contacts.</figcaption>
+      </figure>
+    </div>
+    <h2>Simulation results</h2>
+    <ul class="project-points">
+      <li>Across <strong>12 matched obstructed trials</strong>, SafePi recorded zero obstacle contact in 12/12 trials and completed placement within 300 controls in 7/12. Original AEGIS completed 2/12 under the same placement criterion. <a href="../assets/safepi/path-results.csv">Per-trial results (CSV)</a></li>
+      <li>In <strong>three seeds for the tightest layout</strong>, the follow-up controller completed 3/3 placements with zero obstacle contact, in 324, 333, and 325 controls. All three passed the 450-control test. <a href="../assets/safepi/tight-layout-results.csv">Per-seed results (CSV)</a></li>
+    </ul>
+    <p>Complete placement includes a fixed 30-control opening and retention test. The milk-carton transfer trial ended without a successful grasp.</p>
+    <p>Built with the frozen <a href="https://github.com/Physical-Intelligence/openpi" target="_blank" rel="noopener noreferrer">OpenPI π0.5 LIBERO checkpoint</a> and <a href="https://github.com/THU-RCSCT/vlsa-aegis" target="_blank" rel="noopener noreferrer">AEGIS / SafeLIBERO</a>.</p>
+  </main>
+  <footer class="site-footer">© <span class="year">2026</span> Yanbin Wang. Hosted by GitHub Pages.</footer>
+</body>
+</html>

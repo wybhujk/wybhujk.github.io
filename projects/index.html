@@ -28,27 +28,23 @@
         <div class="project-content">
           <h2>GPU-Accelerated Human-Centered Safety Filtering for Autonomous Racing</h2>
           <p>GPU-parallel policy training, cross-simulator transfer, and online safety filtering.</p>
-          <button class="project-more" type="button" aria-expanded="false">View project ↗</button>
+          <a class="project-more" href="safe-rl.html" target="_blank" rel="noopener" aria-label="View GPU-Accelerated Human-Centered Safety Filtering for Autonomous Racing (opens in a new tab)">View project ↗</a>
         </div>
-        <div class="project-detail"><p>At Johns Hopkins University, I built a MuJoCo training pipeline, transferred policies to Assetto Corsa through a 48-dimensional semantic interface, and implemented a Q-CBF safety filter around a nominal racing policy and Safety SAC recovery actor.</p></div>
+      </article>
+      <article class="project-card" id="safepi">
+        <div class="project-media project-media--photo"><img src="../assets/safepi/thumbnail.webp" width="640" height="640" loading="lazy" alt="Simulated Franka Panda carrying an orange juice carton beside a bottle"></div>
+        <div class="project-content">
+          <h2>SafePi · Collision-Aware Pick and Place with π0.5</h2>
+          <p>RGB-D grasp planning and safety filtering for a frozen vision-language-action policy in MuJoCo.</p>
+          <a class="project-more" href="safepi.html" target="_blank" rel="noopener" aria-label="View SafePi · Collision-Aware Pick and Place with π0.5 (opens in a new tab)">View project ↗</a>
+        </div>
       </article>
       <article class="project-card" id="humanoid">
         <div class="project-media project-media--photo"><img src="../assets/g1-simulation.webp" width="976" height="720" alt="Unitree G1 motion imitation policy running in simulation"></div>
         <div class="project-content">
           <h2>Vision-Based Humanoid Motion Imitation from Monocular Videos</h2>
           <p>Monocular video to 3D human motion, G1 retargeting, and reinforcement learning.</p>
-          <button class="project-more" type="button" aria-expanded="false">View project ↗</button>
-        </div>
-        <div class="project-detail">
-          <ul class="project-points">
-            <li>Recover SMPL motion from RGB video, then retarget it to the Unitree G1 through constrained inverse kinematics.</li>
-            <li>Train an imitation policy in Isaac Lab and evaluate motion playback in simulation and on the physical robot.</li>
-          </ul>
-          <div class="project-gallery project-gallery--video">
-            <figure><video controls playsinline preload="none" poster="../assets/g1-reconstruction.webp" aria-label="Monocular human motion reconstruction demonstration"><source src="../assets/g1-reconstruction.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>Monocular motion reconstruction</figcaption></figure>
-            <figure><video controls playsinline preload="none" poster="../assets/g1-simulation.webp" aria-label="G1 motion imitation policy in simulation"><source src="../assets/g1-simulation.mp4" type="video/mp4">Your browser does not support video playback.</video><figcaption>G1 policy in simulation</figcaption></figure>
-          </div>
-          <figure class="project-wide-figure"><a href="../assets/g1-pipeline.webp" target="_blank" rel="noopener noreferrer"><img src="../assets/g1-pipeline.webp" width="1400" height="265" alt="Pipeline from RGB video through SMPL motion reconstruction, G1 retargeting, and imitation policy training"></a><figcaption>Motion-imitation pipeline from the research presentation</figcaption></figure>
+          <a class="project-more" href="humanoid.html" target="_blank" rel="noopener" aria-label="View Vision-Based Humanoid Motion Imitation from Monocular Videos (opens in a new tab)">View project ↗</a>
         </div>
       </article>
       <article class="project-card" id="grasping">
@@ -56,18 +52,7 @@
         <div class="project-content">
           <h2>Vision-Based Robotic Grasping with GraspNet</h2>
           <p>Language-guided target selection and RGB-D grasp planning on an RM65 arm.</p>
-          <button class="project-more" type="button" aria-expanded="false">View project ↗</button>
-        </div>
-        <div class="project-detail">
-          <ul class="project-points">
-            <li>Use Qwen2.5-VL to identify the requested object, then detection and SAM masks to constrain 3D grasp candidates.</li>
-            <li>Filter GraspNet poses for collisions and robot approach-angle limits before real-world grasp execution.</li>
-          </ul>
-          <div class="project-gallery project-gallery--grasp">
-            <figure><img src="../assets/grasp-detection.webp" width="640" height="480" alt="Detected banana with bounding box"><figcaption>Target detection</figcaption></figure>
-            <figure><img src="../assets/grasp-mask.webp" width="640" height="480" alt="Segmentation mask of the target banana"><figcaption>Target segmentation</figcaption></figure>
-            <figure class="project-gallery-wide"><a href="../assets/grasp-pointcloud.webp" target="_blank" rel="noopener noreferrer"><img src="../assets/grasp-pointcloud.webp" width="1400" height="869" alt="RGB-D point cloud and grasp candidates shown in Open3D"></a><figcaption>RGB-D grasp candidates in Open3D</figcaption></figure>
-          </div>
+          <a class="project-more" href="grasping.html" target="_blank" rel="noopener" aria-label="View Vision-Based Robotic Grasping with GraspNet (opens in a new tab)">View project ↗</a>
         </div>
       </article>
       <article class="project-card" id="sweeper">
@@ -75,27 +60,24 @@
         <div class="project-content">
           <h2>Autonomous Sweeping Robot</h2>
           <p>STM32F407 and RDK X5 mobile robot with custom PCB and live trajectory visualization.</p>
-          <button class="project-more" type="button" aria-expanded="false">View project ↗</button>
+          <a class="project-more" href="sweeper.html" target="_blank" rel="noopener" aria-label="View Autonomous Sweeping Robot (opens in a new tab)">View project ↗</a>
         </div>
-        <div class="project-detail"><p>Integrated embedded motor control, high-level perception, navigation, and hardware bring-up in a complete robot prototype.</p></div>
       </article>
       <article class="project-card" id="balancing">
         <div class="project-media project-media--photo project-media--portrait"><img src="../assets/self-balancing.webp" width="1050" height="1400" alt="Two-wheeled self-balancing robot prototype"></div>
         <div class="project-content">
           <h2>Self-Balancing Wheeled Robot</h2>
           <p>Dual-MCU control, field-oriented motor drive, and cascaded balance control.</p>
-          <button class="project-more" type="button" aria-expanded="false">View project ↗</button>
+          <a class="project-more" href="balancing.html" target="_blank" rel="noopener" aria-label="View Self-Balancing Wheeled Robot (opens in a new tab)">View project ↗</a>
         </div>
-        <div class="project-detail"><p>Separated state estimation from time-critical FOC motor control and tuned cascaded loops for upright stability and disturbance rejection.</p></div>
       </article>
       <article class="project-card" id="mobile-manipulation">
         <div class="project-media project-media--photo"><img src="../assets/mobile-manipulation.webp" width="850" height="454" alt="Mobile robot testing object manipulation and navigation on a marked course"></div>
         <div class="project-content">
           <h2>Mobile Manipulation &amp; Control</h2>
           <p>Inverse kinematics, camera-guided grasping, and STM32 line following and avoidance.</p>
-          <button class="project-more" type="button" aria-expanded="false">View project ↗</button>
+          <a class="project-more" href="mobile-manipulation.html" target="_blank" rel="noopener" aria-label="View Mobile Manipulation &amp; Control (opens in a new tab)">View project ↗</a>
         </div>
-        <div class="project-detail"><p>Combined analytical arm kinematics with vision-based target alignment and resource-constrained mobile navigation.</p></div>
       </article>
     </div>
   </main>

@@ -5,7 +5,7 @@ This is a static, multi-page academic website structured after Ruihan Wu's al-fo
 ## Pages
 
 - `index.html`: about, news, and selected research
-- `projects/index.html`: selected projects
+- `projects/index.html`: selected projects and links to the individual pages in `projects/`
 - `competition/index.html`: VEX U World Championship experience and code architecture
 - `cv/index.html`: embedded PDF and download link
 
@@ -14,6 +14,7 @@ This is a static, multi-page academic website structured after Ruihan Wu's al-fo
 - `assets/profile.jpg` is the supplied portrait. The crop is controlled by `.profile-photo` in `styles.css`.
 - `assets/Yanbin_Wang_PhD_CV.pdf` is the supplied CV. It includes the contact information already present in the original PDF; confirm that it is suitable for public posting before publishing.
 - The Projects page uses selected images and G1 demonstration clips from the supplied research presentation. The JHU racing project still has a text placeholder until a public image is available.
+- The SafePi control diagram is rendered from [Mermaid source](assets/safepi/control-flow.mmd). After editing it, regenerate `assets/safepi/control-flow.svg` with `npx --yes --package=@mermaid-js/mermaid-cli@12.2.0 mmdc -i assets/safepi/control-flow.mmd -o assets/safepi/control-flow.svg -b transparent`.
 - The Competition page uses optimized copies of the four supplied event images: robot, match, team, and results.
 - Add publication entries only when a paper is publicly available and bibliographic details are confirmed.
 

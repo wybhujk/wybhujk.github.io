@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Language-guided target selection and RGB-D grasp planning on an RM65 arm.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Vision-Based Robotic Grasping with GraspNet | Yanbin Wang</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Arial' font-size='38' font-weight='700' fill='%23b509ac'%3EYW%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../script.js"></script>
+</head>
+<body data-root="..">
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="../index.html" aria-label="Yanbin Wang home"><strong>Yanbin</strong> Wang</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">about</a><a class="active" aria-current="location" href="index.html">projects</a><a href="../competition/index.html">competition</a><a href="../cv/index.html">CV</a>
+      <button class="nav-tool search-trigger" type="button" aria-label="Search site" title="Search (Ctrl+K)"><span class="shortcut">ctrl k</span><span class="search-glyph" aria-hidden="true"></span></button>
+      <button class="nav-tool theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">◐</button>
+    </nav>
+  </div></header>
+  <main class="container subpage project-page">
+    <a class="project-back" href="index.html">← All projects</a>
+    <h1>Vision-Based Robotic Grasping with GraspNet</h1>
+    <p class="page-subtitle project-summary">Language-guided target selection and RGB-D grasp planning on an RM65 arm.</p>
+    <figure class="project-wide-figure project-lead-photo"><img src="../assets/grasp-robot.webp" width="1179" height="1334" alt="RM65 robot arm grasping a banana in a tabletop test"></figure>
+    <ul class="project-points">
+      <li>Use Qwen2.5-VL to identify the requested object, then detection and SAM masks to constrain 3D grasp candidates.</li>
+      <li>Filter GraspNet poses for collisions and robot approach-angle limits before real-world grasp execution.</li>
+    </ul>
+    <div class="project-gallery project-gallery--grasp">
+      <figure><img src="../assets/grasp-detection.webp" width="640" height="480" alt="Detected banana with bounding box"><figcaption>Target detection</figcaption></figure>
+      <figure><img src="../assets/grasp-mask.webp" width="640" height="480" alt="Segmentation mask of the target banana"><figcaption>Target segmentation</figcaption></figure>
+      <figure class="project-gallery-wide"><a href="../assets/grasp-pointcloud.webp" target="_blank" rel="noopener noreferrer"><img src="../assets/grasp-pointcloud.webp" width="1400" height="869" alt="RGB-D point cloud and grasp candidates shown in Open3D"></a><figcaption>RGB-D grasp candidates in Open3D</figcaption></figure>
+    </div>
+  </main>
+  <footer class="site-footer">© <span class="year">2026</span> Yanbin Wang. Hosted by GitHub Pages.</footer>
+</body>
+</html>
