@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yanbin Wang's VEX U robotics competition experience, autonomous control software, and 2026 World Championship division title.">
+  <meta name="theme-color" content="#ffffff">
+  <title>competition | Yanbin Wang</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Arial' font-size='38' font-weight='700' fill='%23b509ac'%3EYW%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../script.js"></script>
+</head>
+<body data-root="..">
+  <header class="site-header"><div class="nav-wrap">
+    <a class="brand" href="../index.html" aria-label="Yanbin Wang home"><strong>Yanbin</strong> Wang</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="../index.html">about</a><a href="../projects/index.html">projects</a><a class="active" aria-current="page" href="index.html">competition</a><a href="../cv/index.html">CV</a>
+      <button class="nav-tool search-trigger" type="button" aria-label="Search site" title="Search (Ctrl+K)"><span class="shortcut">ctrl k</span><span class="search-glyph" aria-hidden="true"></span></button>
+      <button class="nav-tool theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle dark mode">◐</button>
+    </nav>
+  </div></header>
+
+  <main class="container subpage competition-page">
+    <h1>competition</h1>
+    <p class="page-subtitle">CQU VEX U Robotics Team · 2024–2026</p>
+
+    <div class="competition-opening">
+      <div class="competition-intro">
+        <p>I worked on autonomous control and game-piece handling for Chongqing University's VEX U team. We won a division title at the 2026 VEX Robotics World Championship.</p>
+        <p class="competition-techline">PROS C++ <span>·</span> LemLib <span>·</span> IMU + optical sensing</p>
+        <section class="competition-highlights" aria-labelledby="outcomes-title">
+          <h2 id="outcomes-title">results</h2>
+          <div class="competition-results">
+            <div><strong>2026</strong><span>VEX U World Championship · Division Champion</span></div>
+            <div><strong>10–0–0</strong><span>2026 qualification record</span></div>
+            <div><strong>2025</strong><span>VEX U World Championship · Top 16</span></div>
+          </div>
+        </section>
+      </div>
+      <figure class="competition-lead">
+        <img src="../assets/vex-robot.webp" width="1400" height="2100" alt="CQU VEX U robot on the field at the 2026 VEX Robotics World Championship">
+        <figcaption>The CQU1 robot at the 2026 VEX Robotics World Championship.</figcaption>
+      </figure>
+    </div>
+
+    <section class="competition-section" aria-labelledby="software-title">
+      <h2 id="software-title">the competition software</h2>
+      <p>The autonomous code coordinates pose-based motion with intake and scoring. Red and blue match routes share the control stack; skills has a separate sequence.</p>
+      <div class="competition-flow" aria-label="Autonomous software architecture from route selection through motion and mechanism control, with sensor feedback">
+        <div class="flow-heading">Autonomous control architecture</div>
+        <ol class="flow-row">
+          <li><span class="flow-label">01 / program</span><strong>Red · blue · skills</strong><small>Selected autonomous route</small></li>
+          <li><span class="flow-label">02 / motion</span><strong>Pose · drive · turn</strong><small>LemLib chassis control</small></li>
+          <li><span class="flow-label">03 / mechanisms</span><strong>Intake · sorting · scoring</strong><small>Timed and asynchronous actions</small></li>
+        </ol>
+        <div class="flow-branches">
+          <div><span>Motion feedback</span><p>IMU heading and LemLib pose control.</p></div>
+          <div><span>Game-piece feedback</span><p>Optical hue, proximity, and motor torque.</p></div>
+        </div>
+      </div>
+      <div class="competition-notes">
+        <article><h3>Autonomous control</h3><p>Pose resets, point moves, and heading turns run alongside asynchronous intake and scoring.</p></article>
+        <article><h3>Color sorting</h3><p>Proximity-gated, six-sample hue voting drives alliance-aware ejection.</p></article>
+        <article><h3>Jam handling</h3><p>Motor torque triggers braking and timed selector recovery.</p></article>
+      </div>
+    </section>
+
+    <section class="competition-section" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">at the championship</h2>
+      <div class="competition-gallery">
+        <figure><a href="../assets/vex-match.webp" target="_blank" rel="noopener noreferrer"><img src="../assets/vex-match.webp" width="1800" height="1200" alt="Teams gathered around the VEX U field during a match"></a><figcaption>On the competition field.</figcaption></figure>
+        <figure><a href="../assets/vex-team.webp" target="_blank" rel="noopener noreferrer"><img src="../assets/vex-team.webp" width="1800" height="1198" alt="CQU VEX U team holding the 2026 division championship banner and award"></a><figcaption>The team with the division championship award.</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="competition-section record-section" aria-labelledby="record-title">
+      <div>
+        <h2 id="record-title">match record</h2>
+        <p>2026 qualification, elimination, and skills results for CQU1.</p>
+        <p><a href="../assets/vex-results.webp" target="_blank" rel="noopener noreferrer">Open the full record ↗</a></p>
+      </div>
+      <a class="record-image" href="../assets/vex-results.webp" target="_blank" rel="noopener noreferrer" aria-label="Open the full VEX U event record image"><img src="../assets/vex-results.webp" width="1000" height="4011" alt="CQU1 2026 VEX Robotics World Championship match and skills results"></a>
+    </section>
+  </main>
+  <footer class="site-footer">© <span class="year">2026</span> Yanbin Wang. Hosted by GitHub Pages.</footer>
+</body>
+</html>
