@@ -1,0 +1,28 @@
+---
+config:
+  theme: base
+  look: classic
+  fontFamily: "Arial, sans-serif"
+  htmlLabels: false
+  themeVariables:
+    primaryColor: "#ffffff"
+    primaryTextColor: "#24222a"
+    primaryBorderColor: "#a7a1b0"
+    lineColor: "#665d74"
+  flowchart:
+    curve: linear
+    nodeSpacing: 20
+    rankSpacing: 20
+    padding: 10
+    wrappingWidth: 230
+---
+flowchart TB
+  accTitle: Why the original SafePi controller stalled
+  accDescr: In D/7, a bottle crowded the grasp approach. The local safety filter repeatedly adjusted motions from the frozen policy. The gripper never touched the carton and the robot avoided the bottle.
+
+  scene["D/7 scene<br/>Bottle crowds the grasp approach"] --> filter["Local safety filter<br/>Adjusts individual actions"]
+  policy["Frozen π0.5<br/>Proposes motion"] --> filter
+  filter --> outcome["Zero bottle contacts<br/>Gripper never reaches the carton"]
+
+  classDef outcomeStyle fill:#f5edf9,stroke:#865a96,stroke-width:2px
+  class outcome outcomeStyle
